@@ -1,0 +1,19 @@
+# osx screen settings
+startup_message off
+ 
+# screen flash on tab remove
+vbell off
+  
+# instead of ctrl+a use ` (tick)
+escape ``
+
+# in order to get tick use `e
+escape `e
+
+# Window list at the bottom. hostname, centered tabs and redmark on active windows:
+#shelltitle '$ |'
+shell -$SHELL
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%? %= %{g}][%{B} %m/%d %{W}%c %{g}]'
+
+defscrollback 50000
