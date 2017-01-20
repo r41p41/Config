@@ -17,6 +17,6 @@ hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%? %= %{g}][%{B} %m/%d %{W}%c %{g}]'
 
 #white background
-#hardstatus string '%{= WK}[ %{K}%H %{K}][%= %{= WW}%?%-Lw%?%{r}(%{K}%n*%f%t%?(%u)%?%{r})%{K}%?%+Lw%?%? %= %{K}][%{B} %m/%d %{K}%c %{K}]'
+#hardstatus string '%{= WK}[ %{K}%H %{K}][%= %{= WK}%?%-Lw%?%{r}(%{K}%n*%f%t%?(%u)%?%{r})%{K}%?%+Lw%?%? %= %{K}][%{B} %m/%d %{K}%c %{K}]'
 
 defscrollback 50000
