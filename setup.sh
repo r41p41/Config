@@ -17,7 +17,7 @@ git clone https://github.com/Z3Prover/z3.git
 cd z3
 python scripts/mk_make.py
 cd build
-sudo make install
+make install
 
 cd
 wget http://software.intel.com/sites/landingpage/pintool/downloads/pin-3.2-81205-gcc-linux.tar.gz
