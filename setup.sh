@@ -15,8 +15,9 @@ echo "source ~/peda/peda.py" >> ~/.gdbinit
 
 git clone https://github.com/Z3Prover/z3.git
 cd z3
-python scripts/mk_make.py
+python scripts/mk_make.py --python
 cd build
+make
 make install
 
 cd
