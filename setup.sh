@@ -17,7 +17,7 @@ git clone https://github.com/Z3Prover/z3.git
 cd z3
 python scripts/mk_make.py
 cd build
-make install
+sudo make install
 python ../scripts/mk_make.py --python
 
 cd
