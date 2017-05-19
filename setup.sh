@@ -18,8 +18,6 @@ cd z3
 python scripts/mk_make.py
 cd build
 sudo make install
-cd ..
-python ./scripts/mk_make.py --python
 
 cd
 wget http://software.intel.com/sites/landingpage/pintool/downloads/pin-3.2-81205-gcc-linux.tar.gz
