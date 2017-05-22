@@ -1,14 +1,10 @@
-sudo su
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt-get -yq install libc6:i386 libncurses5:i386 libstdc++6:i386
+sudo apt-get -yq install libc6-dev-i386
 
-dpkg --add-architecture i386
-apt update
-apt-get -yq install libc6:i386 libncurses5:i386 libstdc++6:i386
-apt-get -yq install libc6-dev-i386
-
-apt-get -yq install gcc vim git gdb clang llvm nasm make python-pip radare2
+sudo apt-get -yq install gcc vim git gdb clang llvm nasm make python-pip radare2
 pip install --upgrade pip
-
-exit
 
 git clone https://github.com/longld/peda.git ~/peda
 echo "source ~/peda/peda.py" >> ~/.gdbinit
