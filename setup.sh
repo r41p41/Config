@@ -4,8 +4,8 @@ sudo apt-get -yq install libc6:i386 libncurses5:i386 libstdc++6:i386
 sudo apt-get -yq install libc6-dev-i386
 
 sudo apt-get -yq install gcc vim git gdb clang llvm nasm make python-pip radare2 libssl-dev libffi-dev build-essential python-dev
-pip install --upgrade pip
-pip install --upgrade pwntools
+sudo pip install --upgrade pip
+sudo pip install --upgrade pwntools
 
 git clone https://github.com/longld/peda.git ~/peda
 echo "source ~/peda/peda.py" >> ~/.gdbinit
