@@ -2,6 +2,7 @@
   set shiftwidth=4
   set tabstop=4
   set number
+  set binary
   nmap <C-a> <Home>
   nmap <C-e> <End>
   vmap <C-a> <Home>
