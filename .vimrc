@@ -63,3 +63,4 @@ nmap <leader>gf :TagbarToggle<CR>
 nmap <leader>gd :Unite gtags/def:
 nmap <leader>gr :Unite gtags/ref:
 nmap <leader>gg :Unite grep<CR>
+nmap <leader>gc :Unite output/shellcmd<CR>
