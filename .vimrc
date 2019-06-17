@@ -58,9 +58,14 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 "config plugins
 let g:script_runner_key = '<F9>'
-nmap <Tab> :NERDTreeToggle<CR>
+nmap <leader>gl :NERDTreeToggle<CR>
 nmap <leader>gf :TagbarToggle<CR>
 nmap <leader>gd :Unite gtags/def:
 nmap <leader>gr :Unite gtags/ref:
 nmap <leader>gg :Unite grep<CR>
+nmap <leader>gh :Unite outline<CR>
 nmap <leader>gc :Unite output/shellcmd<CR>
+
+set foldmethod=indent
+set foldlevel=99
+nmap <space> za
