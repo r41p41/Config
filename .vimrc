@@ -13,6 +13,7 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite-outline'
 Plugin 'majutsushi/tagbar'
 Plugin 'ironcamel/vim-script-runner'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -65,7 +66,10 @@ nmap <leader>gr :Unite gtags/ref:
 nmap <leader>gg :Unite grep<CR>
 nmap <leader>gh :Unite outline<CR>
 nmap <leader>gc :Unite output/shellcmd<CR>
+let g:ctrl_map = 'C-p'
+let g:ctrlp_max_files = 0
 
 set foldmethod=indent
 set foldlevel=99
 nmap <space> za
+match Ignore /\r$/
