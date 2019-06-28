@@ -38,7 +38,7 @@ highlight Comment ctermfg=green
 let leader = "\\"
 
 "for tab switching use \] and \[ \#
-nmap <leader>c :tabedit<CR>
+nmap <leader>' :tabedit<CR>
 nmap <leader>] :tabnext<CR>
 nmap <leader>[ :tabprevious<CR>
 nmap <leader>1 1gt
