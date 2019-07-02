@@ -71,6 +71,7 @@ nmap <leader>f :Unite line<CR>
 nmap <leader>l :Unite buffer file<CR>
 nmap <leader>h :Unite history/unite<CR>
 nmap <leader>j :Unite jump<CR>
+nmap <leader>ag :Unite grep<CR>
 
 nmap <backspace> :UniteResume<CR>
 "quickfixsearch with g/<pattern>/caddexpr expand("%") . ":" . line(".") . ":" . getline(".")
@@ -84,3 +85,9 @@ set foldmethod=indent
 set foldlevel=99
 nmap <space> za
 match Ignore /\r$/
+
+if executable('ag')
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
+  let g:unite_source_grep_recursive_opt=''
+endif
