@@ -63,10 +63,15 @@ nmap <leader>gl :NERDTreeToggle<CR>
 nmap <leader>gf :TagbarToggle<CR>
 nmap <leader>gd :Unite gtags/def:
 nmap <leader>gr :Unite gtags/ref:
+nmap <leader>gg :Unite gtags/grep:
 nmap <leader>gh :Unite outline<CR>
 nmap <leader>gc :Unite output/shellcmd<CR>
+nmap <leader>go :Unite output<CR>
 nmap <backspace> :UniteResume<CR>
 nmap <C-f> :UniteWithCursorWord line<CR>
+"quickfixsearch with g/<pattern>/caddexpr expand("%") . ":" . line(".") . ":" . getline(".")
+"or use vimgrep <pattern> %
+"copen, cclose, cexpr [] (clear)
 
 let g:ctrl_map = 'C-p'
 let g:ctrlp_max_files = 0
