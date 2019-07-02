@@ -67,8 +67,12 @@ nmap <leader>gg :Unite gtags/grep:
 nmap <leader>gh :Unite outline<CR>
 nmap <leader>gc :Unite output/shellcmd<CR>
 nmap <leader>go :Unite output<CR>
+nmap <leader>f :Unite line<CR>
+nmap <leader>l :Unite buffer file<CR>
+nmap <leader>h :Unite history/unite<CR>
+nmap <leader>j :Unite jump<CR>
+
 nmap <backspace> :UniteResume<CR>
-nmap <C-f> :UniteWithCursorWord line<CR>
 "quickfixsearch with g/<pattern>/caddexpr expand("%") . ":" . line(".") . ":" . getline(".")
 "or use vimgrep <pattern> %
 "copen, cclose, cexpr [] (clear)
