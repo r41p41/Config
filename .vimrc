@@ -9,11 +9,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'hewes/unite-gtags'
 Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite-outline'
 Plugin 'majutsushi/tagbar'
 Plugin 'ironcamel/vim-script-runner'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'osyo-manga/unite-quickfix'
 
 call vundle#end()
 filetype plugin indent on
@@ -22,9 +23,6 @@ set t_Co=256
 
 set number
 set binary
-set shiftwidth=4
-set tabstop=4
-
 map <C-a> <Home>
 map <C-e> <End>
 imap <C-a> <Home>
@@ -51,7 +49,7 @@ nmap <leader>7 7gt
 nmap <leader>8 8gt
 nmap <leader>9 9gt
 if !exists('g:lasttab')
-  let g:lasttab=1
+	let g:lasttab=1
 endif
 nmap <leader><leader> :exe "tabn".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
@@ -67,19 +65,55 @@ nmap <leader>gg :Unite gtags/grep:
 nmap <leader>gh :Unite outline<CR>
 nmap <leader>gc :Unite output/shellcmd<CR>
 nmap <leader>go :Unite output<CR>
+nmap <leader>gb :Gblame<CR>
+
+function! AsyncSwitch()
+	AsyncStop
+	Unite quickfix
+	cclose
+	cexpr []
+endfunction
+
+function! AsyncInput()
+	let cmd = input("async cmd : ")
+	copen
+	execute "AsyncRun ".cmd
+endfunction
+
+function! AGrep()
+	let cmd = input("content regex : ")
+	copen
+	execute "AsyncRun ag ".cmd
+endfunction
+
+"experimental file path with <space> will break this command
+function! AGrepf()
+	let cmd = input("filename regex : ")
+	copen
+	execute "AsyncRun -strip for f in `ag -g ".cmd."`; do echo $f\"|1|   \"; done"
+endfunction
+
+let g:asyncrun_status = ''
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+let unite_quickfix_filename_is_pathshorten = 0
+
+nmap <leader>c :call AsyncInput()<CR>
 nmap <leader>f :Unite line<CR>
 nmap <leader>l :Unite buffer file<CR>
 nmap <leader>h :Unite history/unite<CR>
 nmap <leader>j :Unite jump<CR>
-nmap <leader>ag :Unite grep<CR>
+nmap <leader>s :call AsyncSwitch()<CR>
+nmap <leader>ag :call AGrep()<CR>
+nmap <leader>af :call AGrepf()<CR>
+
+nmap <leader>n :cn<CR>
+nmap <leader>p :cp<CR>
 
 nmap <backspace> :UniteResume<CR>
+
 "quickfixsearch with g/<pattern>/caddexpr expand("%") . ":" . line(".") . ":" . getline(".")
 "or use vimgrep <pattern> %
 "copen, cclose, cexpr [] (clear)
-
-let g:ctrl_map = 'C-p'
-let g:ctrlp_max_files = 0
 
 set foldmethod=indent
 set foldlevel=99
