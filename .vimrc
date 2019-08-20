@@ -14,6 +14,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'osyo-manga/unite-quickfix'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on
